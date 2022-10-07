@@ -10,7 +10,7 @@ from django.core.validators import MinValueValidator, MaxValueValidator
 # Create your models here.
 class Thing(Model):
   name = CharField(max_length=30, unique=True, null=False, blank=False)
-  description = CharField(max_length=120)
+  description = CharField(max_length=120, blank=True)
   quantity = IntegerField(validators=[
     MinValueValidator(0), MaxValueValidator(100)
   ])
